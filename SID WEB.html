@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siddhi Gopale — Creative Designer & Storyteller</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --ink: #0e0d0a;
+    --paper: #f5f2ea;
+    --paper2: #ede9df;
+    --accent: #c8473a;
+    --accent2: #2a4a3e;
+    --gold: #c9972a;
+    --muted: #6b6760;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+    --mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(245,242,234,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(14,13,10,0.08);
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-right { display: none; }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 4rem 4rem 4rem;
+    max-width: 720px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(3.5rem, 6vw, 6rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .hero-name .line2 {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 38ch;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  .hero-roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .role-tag {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    color: var(--ink);
+  }
+
+  .role-tag.accent {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    padding: 0.9rem 2.2rem;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    border: 2px solid var(--accent);
+  }
+
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--accent);
+  }
+
+  .btn-outline {
+    padding: 0.9rem 2.2rem;
+    background: transparent;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 2px solid var(--ink);
+    transition: all 0.2s;
+  }
+
+  .btn-outline:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .hero-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-bg-text {
+    position: absolute;
+    font-family: var(--serif);
+    font-size: 22vw;
+    font-weight: 900;
+    color: rgba(14,13,10,0.04);
+    white-space: nowrap;
+    user-select: none;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    bottom: -0.1em;
+    right: -0.05em;
+  }
+
+  .hero-visual-stack {
+    position: relative;
+    width: 380px;
+    height: 500px;
+  }
+
+  .hero-card {
+    position: absolute;
+    background: var(--paper2);
+    border: 1px solid rgba(14,13,10,0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+
+  .hc1 {
+    width: 280px; height: 360px;
+    top: 40px; left: 20px;
+    background: var(--accent2);
+    animation: float1 6s ease-in-out infinite;
+  }
+
+  .hc2 {
+    width: 220px; height: 280px;
+    top: 0px; right: 0;
+    background: var(--ink);
+    animation: float2 7s ease-in-out infinite;
+  }
+
+  .hc3 {
+    width: 160px; height: 100px;
+    bottom: 0; right: 30px;
+    background: var(--gold);
+    animation: float3 5s ease-in-out infinite;
+  }
+
+  @keyframes float1 {
+    0%, 100% { transform: translateY(0px) rotate(-2deg); }
+    50% { transform: translateY(-12px) rotate(-2deg); }
+  }
+  @keyframes float2 {
+    0%, 100% { transform: translateY(0px) rotate(3deg); }
+    50% { transform: translateY(-8px) rotate(3deg); }
+  }
+  @keyframes float3 {
+    0%, 100% { transform: translateY(0px) rotate(-1deg); }
+    50% { transform: translateY(-6px) rotate(-1deg); }
+  }
+
+  .hc-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.75rem 1rem;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .hc3 .hc-label { color: rgba(14,13,10,0.7); }
+
+  /* ── SECTION COMMON ── */
+  section { position: relative; }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 4rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-num {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  /* ── ABOUT ── */
+  .about-bg { background: var(--paper2); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+    max-width: 720px;
+  }
+
+  .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text p strong { color: var(--ink); font-weight: 500; }
+
+  .about-contact {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--ink);
+    transition: color 0.2s;
+  }
+
+  .contact-item:hover { color: var(--accent); }
+
+  .contact-dot {
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .skills-section h3 {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .skill-category { margin-bottom: 0.5rem; }
+
+  .skill-cat-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .skill-tag {
+    font-size: 0.78rem;
+    padding: 0.3rem 0.75rem;
+    background: var(--paper);
+    border: 1px solid rgba(14,13,10,0.15);
+    border-radius: 2px;
+    color: var(--ink);
+  }
+
+  .skill-tag.highlight {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  /* ── EXPERIENCE ── */
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    padding: 3rem 0;
+    border-top: 1px solid rgba(14,13,10,0.1);
+    position: relative;
+  }
+
+  .exp-item:last-child { border-bottom: 1px solid rgba(14,13,10,0.1); }
+
+  .exp-meta {}
+
+  .exp-company {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .exp-role {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-family: var(--mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .exp-dot {
+    position: absolute;
+    left: 197px;
+    top: 3rem;
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-top: 0.45rem;
+  }
+
+  .exp-content h4 {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .exp-content p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1rem;
+  }
+
+  .exp-tag {
+    font-size: 0.72rem;
+    font-family: var(--mono);
+    padding: 0.25rem 0.65rem;
+    background: var(--paper2);
+    border: 1px solid rgba(14,13,10,0.12);
+    border-radius: 2px;
+  }
+
+  .achievement-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    background: var(--accent2);
+    color: #d4e8e2;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+
+  /* ── PORTFOLIO ── */
+  .portfolio-bg { background: var(--paper2); }
+
+  .portfolio-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .tab-btn {
+    padding: 0.5rem 1.2rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: transparent;
+    border: 1px solid rgba(14,13,10,0.2);
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 2px;
+    color: var(--muted);
+  }
+
+  .tab-btn:hover, .tab-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    background: var(--paper);
+    border: 1px solid rgba(14,13,10,0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(14,13,10,0.12);
+  }
+
+  .project-card.featured {
+    grid-column: span 2;
+  }
+
+  .project-visual {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card.featured .project-visual { height: 300px; }
+
+  .pv-label {
+    font-family: var(--serif);
+    font-size: 3rem;
+    font-weight: 900;
+    opacity: 0.15;
+    color: #fff;
+    letter-spacing: -0.04em;
+  }
+
+  .pv-icon {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5rem;
+    opacity: 0.3;
+  }
+
+  .pv-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(4px);
+    color: rgba(255,255,255,0.9);
+    border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+
+  .project-body {
+    padding: 1.5rem;
+  }
+
+  .project-category {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .project-name {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .project-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .project-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .tool-tag {
+    font-size: 0.7rem;
+    font-family: var(--mono);
+    padding: 0.2rem 0.55rem;
+    background: var(--paper2);
+    border-radius: 2px;
+    color: var(--muted);
+  }
+
+
+
+  /* ── PORTFOLIO DRIVE LINKS ── */
+  .drives-section { }
+
+  .drives-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 720px;
+  }
+
+  .drive-card {
+    border: 1px solid rgba(14,13,10,0.15);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: border-color 0.2s, transform 0.2s;
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--paper);
+  }
+
+  .drive-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+
+  .drive-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .drive-icon svg { fill: var(--paper); width: 28px; height: 28px; }
+
+  .drive-card h3 {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .drive-card p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .drive-arrow {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+    transition: gap 0.2s;
+  }
+
+  .drive-card:hover .drive-arrow { gap: 0.85rem; }
+
+  .drive-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .drive-cat {
+    font-size: 0.72rem;
+    font-family: var(--mono);
+    padding: 0.25rem 0.6rem;
+    background: var(--paper2);
+    border-radius: 2px;
+    color: var(--muted);
+  }
+
+  /* ── CONTACT ── */
+  .contact-bg { background: var(--ink); color: var(--paper); }
+
+  .contact-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 6rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .contact-title {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    color: var(--paper);
+  }
+
+  .contact-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .contact-subtitle {
+    font-size: 1rem;
+    color: rgba(245,242,234,0.55);
+    line-height: 1.8;
+    max-width: 38ch;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-decoration: none;
+    padding: 1.5rem;
+    border: 1px solid rgba(245,242,234,0.1);
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .contact-link:hover {
+    border-color: var(--accent);
+    background: rgba(200,71,58,0.06);
+  }
+
+  .cl-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(245,242,234,0.35);
+  }
+
+  .cl-value {
+    font-size: 1rem;
+    color: var(--paper);
+    font-weight: 500;
+  }
+
+  .cl-arrow {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-top: 0.25rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(245,242,234,0.08);
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+    color: rgba(245,242,234,0.3);
+    font-family: var(--mono);
+  }
+
+  footer a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-family: var(--mono);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+    .hero-left { padding: 7rem 1.5rem 3rem; }
+    .hero-right { display: none; }
+
+    .section-inner { padding: 4rem 1.5rem; }
+
+    .about-grid,
+    .contact-inner,
+    .drives-grid { gap: 2rem; }
+
+    .exp-item { grid-template-columns: 1fr; gap: 1rem; }
+    .exp-dot { display: none; }
+
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .project-card.featured { grid-column: span 1; }
+
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">S<span>G</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#portfolio">Work</a></li>
+
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://www.linkedin.com/in/siddhi-gopale-aa358a384" target="_blank" class="btn-primary" style="padding: 0.6rem 1.4rem; font-size: 0.75rem;">LinkedIn ↗</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Creative Portfolio — Pune, India</div>
+    <h1 class="hero-name">
+      Siddhi<br>
+      <span class="line2">Gopale.</span>
+    </h1>
+    <p class="hero-tagline">
+      Multidisciplinary creative professional crafting stories through design, motion, and the written word — from pixels to screenplays.
+    </p>
+    <div class="hero-roles">
+      <span class="role-tag accent">Creative Designer</span>
+      <span class="role-tag">Video Editor</span>
+      <span class="role-tag">Motion Graphics</span>
+      <span class="role-tag">Script Writer</span>
+      <span class="role-tag">Content Creator</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="https://drive.google.com/drive/folders/1REcea_33OzWYvQixBVcBPVpMoMo1sX4E" target="_blank" class="btn-primary">View Portfolio</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-text">SG</div>
+    <div class="hero-visual-stack">
+      <div class="hero-card hc1">
+        <div class="hc-label">Motion & Visual Design</div>
+      </div>
+      <div class="hero-card hc2">
+        <div class="hc-label">Script & Storytelling</div>
+      </div>
+      <div class="hero-card hc3">
+        <div class="hc-label" style="color: rgba(14,13,10,0.6);">Brand & Campaign</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-bg">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-num">01 —</span>
+      <h2 class="section-title">About <em>Me</em></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>
+          I'm a <strong>multidisciplinary creative</strong> based in Pune, Maharashtra — equally at home in Adobe After Effects building motion sequences as I am writing a screenplay or crafting social media campaigns that stop the scroll.
+        </p>
+        <p>
+          My work spans the full creative spectrum: from concept and script to final rendered frame. I've designed marketing campaigns, edited election advertisement videos, built brand identities, and contributed original scenes to film projects. Every project I take on is an opportunity to <strong>tell a story better</strong>.
+        </p>
+        <p>
+          With hands-on experience at digital agencies, motion studios, and film production setups, I bring both craft precision and creative vision to every deliverable — whether it's a 30-second reel or a feature screenplay.
+        </p>
+        <div class="about-contact">
+          <a href="tel:9021338436" class="contact-item">
+            <span class="contact-dot"></span>
+            +91 9021338436
+          </a>
+          <a href="mailto:siddhigopale007@gmail.com" class="contact-item">
+            <span class="contact-dot"></span>
+            siddhigopale007@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/siddhi-gopale-aa358a384" target="_blank" class="contact-item">
+            <span class="contact-dot"></span>
+            LinkedIn Profile ↗
+          </a>
+        </div>
+      </div>
+      <div class="skills-section reveal">
+        <h3>Craft & Tools</h3>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <div class="skill-cat-label">Motion & Video</div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight">Adobe After Effects</span>
+              <span class="skill-tag highlight">Adobe Premiere Pro</span>
+              <span class="skill-tag">Motion Graphics</span>
+              <span class="skill-tag">Reels Editing</span>
+              <span class="skill-tag">Video Enhancement</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-cat-label">Design</div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight">Adobe Photoshop</span>
+              <span class="skill-tag highlight">Canva</span>
+              <span class="skill-tag">Social Media Design</span>
+              <span class="skill-tag">Campaign Design</span>
+              <span class="skill-tag">Visual Communication</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-cat-label">Writing & Narrative</div>
+            <div class="skill-tags">
+              <span class="skill-tag highlight">Script Writing</span>
+              <span class="skill-tag highlight">Screenplay Development</span>
+              <span class="skill-tag">Storytelling</span>
+              <span class="skill-tag">Creative Writing</span>
+              <span class="skill-tag">Scene Writing</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-cat-label">Production & Content</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Production Support</span>
+              <span class="skill-tag">Content Creation</span>
+              <span class="skill-tag">BTS Documentation</span>
+              <span class="skill-tag">Marketing Creatives</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-num">02 —</span>
+      <h2 class="section-title">Where I've <em>Worked</em></h2>
+    </div>
+    <div class="experience-list">
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-company">PeakSurge Digital</div>
+          <div class="exp-role">Design Intern</div>
+        </div>
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <h4>Creative Design & Video Editing Intern</h4>
+          <p>Worked within a fast-paced digital agency environment producing social media creatives, reels, and marketing visuals. Contributed to brand campaigns and provided ongoing creative support across multiple client accounts.</p>
+          <div class="exp-tags">
+            <span class="exp-tag">Social Media Design</span>
+            <span class="exp-tag">Reels Editing</span>
+            <span class="exp-tag">Campaign Creatives</span>
+            <span class="exp-tag">Marketing Visuals</span>
+            <span class="exp-tag">Brand Support</span>
+            <span class="exp-tag">Content Production</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-company">Vaishnavi Creations</div>
+          <div class="exp-role">Video Editor & MoGraph</div>
+        </div>
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <h4>Video Editor & Motion Graphics Designer</h4>
+          <p>Produced full-scale campaign videos, election advertisement videos, and branded motion content. Designed promotional reels and brand marketing videos, developing a strong command of visual storytelling through motion and timing.</p>
+          <div class="exp-tags">
+            <span class="exp-tag">Motion Graphics</span>
+            <span class="exp-tag">Campaign Video Production</span>
+            <span class="exp-tag">Election Ad Videos</span>
+            <span class="exp-tag">Brand Marketing Videos</span>
+            <span class="exp-tag">Promotional Reels</span>
+            <span class="exp-tag">Visual Storytelling</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-company">Krishna Animation Studio</div>
+          <div class="exp-role">Video Editor</div>
+        </div>
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <h4>Video Editor — Short-form & Social</h4>
+          <p>Specialised in reels editing, social media video production, and short-form content creation. Developed platform-specific content strategies and applied video enhancement techniques for maximum viewer engagement.</p>
+          <div class="exp-tags">
+            <span class="exp-tag">Reels Editing</span>
+            <span class="exp-tag">Social Video Production</span>
+            <span class="exp-tag">Short-form Content</span>
+            <span class="exp-tag">Video Enhancement</span>
+            <span class="exp-tag">Platform Optimization</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-company">Grandmaa Stories</div>
+          <div class="exp-role">Script Writing Intern</div>
+        </div>
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <h4>Script Writing Intern — Film & Narrative Development</h4>
+          <p>Contributed to screenplay development and story building for film projects. Wrote scenes, developed narratives, and collaborated closely with the writing and production team. Notable achievement: wrote and contributed a scene for the movie project <em>Zombie</em>.</p>
+          <div class="achievement-badge">
+            ✦ Scene Writer — Film Project: "Zombie"
+          </div>
+          <div class="exp-tags">
+            <span class="exp-tag">Story Development</span>
+            <span class="exp-tag">Scene Writing</span>
+            <span class="exp-tag">Script Assistance</span>
+            <span class="exp-tag">Creative Ideation</span>
+            <span class="exp-tag">Narrative Development</span>
+            <span class="exp-tag">Screenplay Contributions</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="portfolio-bg">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-num">03 —</span>
+      <h2 class="section-title">Selected <em>Work</em></h2>
+    </div>
+
+    <div class="portfolio-tabs reveal" id="tabs">
+      <button class="tab-btn active" data-filter="all">All Work</button>
+      <button class="tab-btn" data-filter="motion">Motion & Video</button>
+      <button class="tab-btn" data-filter="design">Design & Branding</button>
+      <button class="tab-btn" data-filter="social">Social Media</button>
+      <button class="tab-btn" data-filter="campaign">Campaigns</button>
+      <button class="tab-btn" data-filter="script">Script & Story</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolio-grid">
+
+      <!-- Motion Graphics -->
+      <div class="project-card featured reveal" data-cat="motion">
+        <div class="project-visual" style="background: linear-gradient(135deg, #2a4a3e 0%, #0e2219 100%);">
+          <div class="pv-label">MOTION</div>
+          <div class="pv-badge">Featured</div>
+        </div>
+        <div class="project-body">
+          <div class="project-category">Motion Graphics</div>
+          <div class="project-name">Election Campaign Video Series</div>
+          <p class="project-desc">High-impact election advertisement videos for political campaigns — combining motion graphics, kinetic typography, and compelling visual storytelling to communicate messages that resonate with voters. Produced at Vaishnavi Creations.</p>
+          <div class="project-tools">
+            <span class="tool-tag">After Effects</span>
+            <span class="tool-tag">Premiere Pro</span>
+            <span class="tool-tag">Photoshop</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Creatives -->
+      <div class="project-card reveal" data-cat="social design">
+        <div class="project-visual" style="background: linear-gradient(135deg, #c8473a 0%, #7a2419 100%);">
+          <div class="pv-label">SOCIAL</div>
+          <div class="pv-badge">Design</div>
+        </div>
+        <div class="project-body">
+          <div class="project-category">Social Media Creatives</div>
+          <div class="project-name">Social Media Design Suite</div>
+          <p class="project-desc">Complete social media creative packages — posts, stories, carousels and reels covers — built for engagement and brand consistency across Instagram, Facebook, and digital platforms.</p>
+          <div class="project-tools">
+            <span class="tool-tag">Canva</span>
+            <span class="tool-tag">Photoshop</span>
+            <span class="tool-tag">Premiere Pro</span>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Brand Marketing -->
+      <div class="project-card reveal" data-cat="design campaign">
+        <div class="project-visual" style="background: linear-gradient(135deg, #c9972a 0%, #7a5608 100%);">
+          <div class="pv-label">BRAND</div>
+          <div class="pv-badge">Campaign</div>
+        </div>
+        <div class="project-body">
+          <div class="project-category">Brand Marketing</div>
+          <div class="project-name">Brand Marketing Video Campaigns</div>
+          <p class="project-desc">Promotional reels and brand marketing videos crafted to build brand identity and drive conversions. From concept to final cut — scripted narratives, colour grading, and motion overlay.</p>
+          <div class="project-tools">
+            <span class="tool-tag">Premiere Pro</span>
+            <span class="tool-tag">After Effects</span>
+            <span class="tool-tag">Photoshop</span>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Posters -->
+      <div class="project-card reveal" data-cat="design">
+        <div class="project-visual" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
+          <div class="pv-label">PRINT</div>
+          <div class="pv-badge">Design</div>
+        </div>
+        <div class="project-body">
+          <div class="project-category">Poster & Graphic Design</div>
+          <div class="project-name">Creative Poster Collection</div>
+          <p class="project-desc">Event posters, announcement graphics, promotional flyers and digital billboards — bold typographic compositions that command attention and communicate clearly at any scale.</p>
+          <div class="project-tools">
+            <span class="tool-tag">Photoshop</span>
+            <span class="tool-tag">Canva</span>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reels -->
+      <div class="project-card reveal" data-cat="motion social">
+        <div class="project-visual" style="background: linear-gradient(135deg, #3d2b56 0%, #1a0e2e 100%);">
+          <div class="pv-label">REELS</div>
+          <div class="pv-badge">Short-form</div>
+        </div>
+        <div class="project-body">
+          <div class="project-category">Reels & Short-form Video</div>
+          <div class="project-name">Short-form Video Editing</div>
+          <p class="project-desc">Instagram Reels and platform-native short-form content edited for maximum retention — rhythm-driven cuts, text overlays, sound design synchronisation, and hook-first structure.</p>
+          <div class="project-tools">
+            <span class="tool-tag">Premiere Pro</span>
+            <span class="tool-tag">After Effects</span>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Script Writing -->
+      <div class="project-card reveal" data-cat="script">
+        <div class="project-visual" style="background: linear-gradient(135deg, #1c3a4a 0%, #0a1c26 100%);">
+          <div class="pv-label">SCRIPT</div>
+          <div class="pv-badge">Writing</div>
+        </div>
+        <div class="project-body">
+          <div class="project-category">Script & Story Development</div>
+          <div class="project-name">Script Writing Portfolio</div>
+          <p class="project-desc">Original scripts, scene writing, narrative development, and screenplay contributions. From short-form social scripts to long-form film scenes — every word written with purpose and visual imagination.</p>
+          <div class="project-tools">
+            <span class="tool-tag">Screenplay</span>
+            <span class="tool-tag">Scene Writing</span>
+            <span class="tool-tag">Creative Writing</span>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PeakSurge Campaigns -->
+      <div class="project-card reveal" data-cat="campaign design social">
+        <div class="project-visual" style="background: linear-gradient(135deg, #2d4a1e 0%, #12200a 100%);">
+          <div class="pv-label">ADS</div>
+          <div class="pv-badge">Campaign</div>
+        </div>
+        <div class="project-body">
+          <div class="project-category">Marketing Campaign</div>
+          <div class="project-name">Digital Marketing Campaigns</div>
+          <p class="project-desc">Full campaign creative suites — ad creatives, social content, visual brand support and marketing visuals designed to drive results across digital platforms.</p>
+          <div class="project-tools">
+            <span class="tool-tag">Canva</span>
+            <span class="tool-tag">Photoshop</span>
+            <span class="tool-tag">Premiere Pro</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BTS & Production -->
+      <div class="project-card reveal" data-cat="script">
+        <div class="project-visual" style="background: linear-gradient(135deg, #3a2a1e 0%, #1a1008 100%);">
+          <div class="pv-label">BTS</div>
+          <div class="pv-badge">Production</div>
+        </div>
+        <div class="project-body">
+          <div class="project-category">Production & BTS</div>
+          <div class="project-name">Shoot Experience & BTS Documentation</div>
+          <p class="project-desc">Behind-the-scenes documentation, production support, and on-set creative contributions. Real-world experience collaborating with cast and crew — from pre-production to wrap.</p>
+          <div class="project-tools">
+            <span class="tool-tag">Production Support</span>
+            <span class="tool-tag">On-set Collaboration</span>
+          </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PORTFOLIO DRIVE LINKS -->
+<section>
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-num">04 —</span>
+      <h2 class="section-title">Explore <em>Portfolios</em></h2>
+    </div>
+    <div class="drives-grid">
+      <a href="https://drive.google.com/drive/folders/1REcea_33OzWYvQixBVcBPVpMoMo1sX4E" target="_blank" class="drive-card reveal">
+        <div class="drive-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.5 20q-2.275 0-3.888-1.575T1 14.5q0-1.95 1.175-3.475T5.25 9.15q.625-2.3 2.5-3.725T12 4q2.925 0 4.963 2.038T19 11q1.725.2 2.863 1.488T23 15.5q0 1.875-1.313 3.188T18.5 20zm0-2h12q1.05 0 1.775-.725T21 15.5q0-1.05-.725-1.775T18.5 13H17v-2q0-2.075-1.463-3.538T12 6Q9.925 6 8.462 7.463T7 11v.1q-1.475.25-2.487 1.375T3.5 15q0 1.25.875 2.125T6.5 18z"/></svg>
+        </div>
+        <h3>Main Creative<br>Portfolio</h3>
+        <p>Graphic design, social media creatives, posters, motion graphics, video editing, reels, marketing campaigns, election campaign videos, advertisement creatives, and branding projects.</p>
+        <div class="drive-categories">
+          <span class="drive-cat">Motion Graphics</span>
+          <span class="drive-cat">Video Editing</span>
+          <span class="drive-cat">Graphic Design</span>
+          <span class="drive-cat">Posters</span>
+          <span class="drive-cat">Social Media</span>
+          <span class="drive-cat">Campaign Creatives</span>
+          <span class="drive-cat">Branding</span>
+          <span class="drive-cat">Reels</span>
+        </div>
+        <div class="drive-arrow">Open Portfolio →</div>
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1VWr6yt1zAX4pbofAHfHUR7oP_Kdqhg72" target="_blank" class="drive-card reveal">
+        <div class="drive-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8zm4 18H6V4h7v5h5z"/></svg>
+        </div>
+        <h3>Script Writing,<br>Production & Shoots</h3>
+        <p>Script writing work, movie contributions, scene writing, production support, shoot experience, behind-the-scenes content, storytelling projects, screenplay work, and film & media projects.</p>
+        <div class="drive-categories">
+          <span class="drive-cat">Script Writing</span>
+          <span class="drive-cat">Scene Writing</span>
+          <span class="drive-cat">Screenplay</span>
+          <span class="drive-cat">Film Projects</span>
+          <span class="drive-cat">BTS Content</span>
+          <span class="drive-cat">Production</span>
+          <span class="drive-cat">Story Dev</span>
+        </div>
+        <div class="drive-arrow">Open Portfolio →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-bg">
+  <div class="contact-inner">
+    <div>
+      <h2 class="contact-title">
+        Let's Create<br>
+        <em>Together</em>
+      </h2>
+      <p class="contact-subtitle">
+        Whether you need a motion graphic campaign, a social media creative suite, video editing, or someone to write your story — I'm available for freelance projects and full-time opportunities.
+      </p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:siddhigopale007@gmail.com" class="contact-link">
+        <span class="cl-label">Email</span>
+        <span class="cl-value">siddhigopale007@gmail.com</span>
+        <span class="cl-arrow">Write to me →</span>
+      </a>
+      <a href="tel:9021338436" class="contact-link">
+        <span class="cl-label">Phone</span>
+        <span class="cl-value">+91 9021338436</span>
+        <span class="cl-arrow">Call or WhatsApp →</span>
+      </a>
+      <a href="https://www.linkedin.com/in/siddhi-gopale-aa358a384" target="_blank" class="contact-link">
+        <span class="cl-label">LinkedIn</span>
+        <span class="cl-value">linkedin.com/in/siddhi-gopale-aa358a384</span>
+        <span class="cl-arrow">Connect →</span>
+      </a>
+      <a href="https://drive.google.com/drive/folders/1REcea_33OzWYvQixBVcBPVpMoMo1sX4E" target="_blank" class="contact-link">
+        <span class="cl-label">Creative Portfolio</span>
+        <span class="cl-value">View Full Work on Google Drive</span>
+        <span class="cl-arrow">Explore →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Siddhi Dinesh Gopale — All rights reserved</p>
+  <p>Pune, Maharashtra, India</p>
+  <a href="mailto:siddhigopale007@gmail.com">siddhigopale007@gmail.com</a>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(r => obs.observe(r));
+
+  // Portfolio tabs
+  const tabs = document.querySelectorAll('.tab-btn');
+  const cards = document.querySelectorAll('.project-card');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const filter = tab.dataset.filter;
+      cards.forEach(card => {
+        const cats = card.dataset.cat || '';
+        if (filter === 'all' || cats.includes(filter)) {
+          card.style.display = '';
+          // featured class logic
+          if (filter === 'all' && card.classList.contains('featured')) {
+            card.style.gridColumn = 'span 2';
+          } else {
+            card.style.gridColumn = '';
+          }
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
